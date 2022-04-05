@@ -113,18 +113,26 @@ func (t *trace) copy(target *trace) {
 func (t *trace) formatAndPrint() {
 	fmt.Printf("Trace length: %d\n-------------------------\n", len(*t))
 
+	fmt.Println(t.format())
+	fmt.Println()
+}
+
+func (t *trace) format() string {
+	res := ""
+
 	chronologicalOrd := make([]string, len(*t))
 	for k, v := range *t {
 		chronologicalOrd[v-1] = k
 	}
 
 	for i, v := range chronologicalOrd {
-		fmt.Print(v)
+		res += v
 		if i != len(chronologicalOrd)-1 {
-			fmt.Print(" -->\n")
+			res += " -->\n"
 		}
 	}
-	fmt.Println()
+
+	return res
 }
 
 // stringSet represents a set of strings

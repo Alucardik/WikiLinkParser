@@ -14,6 +14,8 @@ type RequestStatus interface {
 	RemoveWorker()
 	Await()
 	Report()
+	GetTraceLen() int
+	GetTrace() string
 }
 
 type requestStatus struct {
@@ -57,4 +59,20 @@ func (rs *requestStatus) Report() {
 	} else {
 		fmt.Println("Request has not been fulfilled")
 	}
+}
+
+func (rs *requestStatus) GetTraceLen() int {
+	if rs.IsFulfilled() {
+		return len(rs.path)
+	}
+
+	return 0
+}
+
+func (rs *requestStatus) GetTrace() string {
+	if rs.IsFulfilled() {
+		return rs.path.format()
+	}
+
+	return ""
 }

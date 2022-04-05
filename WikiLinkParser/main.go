@@ -1,11 +1,29 @@
 package main
 
 import (
+	"WikiLinkParser/server"
 	"WikiLinkParser/worker"
+	"flag"
+	"fmt"
+)
+
+const (
+	SERVER_MODE = "server"
+	WORKER_MODE = "worker"
+)
+
+var (
+	mode = flag.String("mode", SERVER_MODE, "server or worker mode")
 )
 
 func main() {
-	initPage := "https://en.wikipedia.org/wiki/Main_Page"
-	targPage := "https://en.wikipedia.org/wiki/Norsemen_(TV_series)"
-	worker.LaunchWorker(initPage, targPage)
+	flag.Parse()
+	switch *mode {
+	case SERVER_MODE:
+		server.Run()
+	case WORKER_MODE:
+		worker.Run()
+	default:
+		fmt.Println("Unsupported mode", *mode)
+	}
 }

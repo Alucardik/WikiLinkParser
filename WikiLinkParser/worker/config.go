@@ -28,11 +28,18 @@ var FORMAT_PATTERNS = map[formatError]*regexp.Regexp{
 	DOUBLE_QUOTES:            regexp.MustCompile(`^".*"`),
 }
 
-//
+// parsing consts ----------------------------------------------------------------
 
 const (
 	MAX_DEPTH     = 5
 	ROUTINE_LIM   = 1000
 	REQUEST_DELAY = 5 * time.Second
 	RETRY_CNT     = 2
+)
+
+// queue settings ----------------------------------------------------------------
+
+const (
+	SEND_QUEUE    = "worker_results"
+	RECEIVE_QUEUE = "worker_tasks"
 )
