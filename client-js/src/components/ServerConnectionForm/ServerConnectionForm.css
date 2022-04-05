@@ -1,0 +1,8 @@
+.ServerConnectionForm[class] {
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}

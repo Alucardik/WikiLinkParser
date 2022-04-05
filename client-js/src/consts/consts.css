@@ -1,0 +1,17 @@
+:root {
+    --c_primary: #dedada;
+    --c_secondary: #dadade;
+    --c_tertiary: #dededa;
+    --c_active: #c59a9a;
+
+    --c_serapator: #555;
+    --c_border: rgba(85, 85, 85, .8);
+
+    --c_text_primary: #000000CC;
+
+    --px_tab_radius: 15px 20px 0 0;
+
+    --transition_effect_tab: ease-in-out .2s;
+    --transition_effect_button: ease-out .1s;
+}
+

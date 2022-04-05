@@ -1,0 +1,79 @@
+.CommonForm {
+    width: 100%;
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 10px;
+
+    background: var(--c_tertiary);
+
+    border: 2px var(--c_serapator) solid;
+    border-radius: 0 25px 25px 25px;
+}
+
+.CommonForm__title {
+    margin: 0 0 15px;
+
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.CommonForm__label {
+    width: 150px;
+
+    margin-bottom: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 2px solid var(--c_border);
+}
+
+.CommonForm__label:last-of-type {
+    margin-bottom: 0;
+}
+
+.CommonForm__label:focus {
+    opacity: .8;
+}
+
+.CommonForm__input {
+    width: 100%;
+    height: 100%;
+
+    margin-top: 5px;
+
+    padding: 0;
+    border: none;
+    background: none;
+
+    font-size: 16px;
+}
+
+.CommonForm__input:focus {
+    outline: none;
+}
+
+.CommonForm__submit {
+    width: 120px;
+
+    margin-top: 30px;
+    padding: 2px;
+
+    background: var(--c_secondary);
+    border: 2px solid var(--c_border);
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: all var(--transition_effect_button);
+}
+
+.CommonForm__submit:hover {
+    opacity: .9;
+    background: var(--c_active);
+}

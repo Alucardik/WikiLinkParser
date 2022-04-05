@@ -1,0 +1,87 @@
+.FormSwitcher {
+    margin: 220px auto 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.FormSwitcher__tabs {
+    display: flex;
+}
+
+.FormSwitcher__tab {
+    min-width: 180px;
+    padding: 4px;
+
+    margin-right: 5px;
+
+    position: relative;
+
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 1px 1px rgba(255, 255, 255, .3);
+
+    cursor: pointer;
+
+    border: 2px var(--c_serapator) solid;
+    border-bottom: none;
+    border-radius: var(--px_tab_radius);
+    background: var(--c_tertiary);
+    transition: transform var(--transition_effect_tab);
+}
+
+.FormSwitcher__tab:last-of-type {
+    margin-right: 0;
+}
+
+.FormSwitcher__tab_selected {
+    bottom: 5px;
+}
+
+.FormSwitcher__tab_selected.FormSwitcher__tab::before {
+    top: 100%;
+}
+
+.FormSwitcher__tab_selected.FormSwitcher__tab:hover.FormSwitcher__tab::before {
+    transform: none;
+}
+
+.FormSwitcher__tab:hover:not(.FormSwitcher__tab_selected) {
+    transform: translateY(-5px);
+}
+
+.FormSwitcher__tab::before {
+    content: "";
+
+    width: 100%;
+    height: 5px;
+
+    position: absolute;
+    top: calc(100% - 5px);
+    left: -2px;
+
+    border-left: 2px var(--c_serapator) solid;
+    border-right: 2px var(--c_serapator) solid;
+
+    background: inherit;
+    transition: transform var(--transition_effect_tab);
+}
+
+.FormSwitcher__tab:hover.FormSwitcher__tab::before {
+    transform: translateY(5px);
+}
+
+.FormSwitcher__tab::after {
+    content: "";
+
+    width: 100%;
+    height: 7px;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: inherit;
+}
