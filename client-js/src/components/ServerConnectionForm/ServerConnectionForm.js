@@ -4,13 +4,16 @@ import cn from "../../utils/CSSClassGenerator";
 import "../CommonForm/CommonForm.css";
 import "./ServerConnectionForm.css";
 
-export default function ServerConnectionForm() {
+export default function ServerConnectionForm(props) {
   const serverConnectionFormCn = new cn("ServerConnectionForm");
   const commonFormCn = new cn("CommonForm");
 
+  // TODO: add state vars for inputs and set them to docker config by default
+
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("SUBMIT!");
+
+    props.onSubmit();
   }
 
   return (
@@ -52,5 +55,5 @@ export default function ServerConnectionForm() {
         Connect
       </button>
     </form>
-  )
+  );
 }

@@ -1,0 +1,1 @@
+protoc --plugin=./client-js/src/proto/protoc-gen-grpc-web --js_out=import_style=commonjs,binary:client-js/src/proto --grpc-web_out=import_style=commonjs,mode=grpcwebtext:client-js/src/proto WikiLinkParserService.proto

@@ -11,10 +11,20 @@ services:
     build:
       context: WikiLinkParser
       dockerfile: server.Dockerfile
+    ports:
+      - "9090:9090"
   worker:
     build:
       context: WikiLinkParser
       dockerfile: worker.Dockerfile
+#  client_proxy:
+#    build:
+#      context: client-js
+#      dockerfile: envoyProxy.Dockerfile
+#    ports:
+#      - "8080:8080"
+#      - "9901:9901"
 #  client_js:
 #    build:
 #      context: client-js
+#      dockerfile: client.Dockerfile

@@ -30,8 +30,6 @@ func (qi *queueInfo) InitQueueConnection(address string, port int, sendName, rcv
 	rcvQ, err := declareQueue(ch, rcvName)
 	qi.rcvQueue = rcvQ
 	error_utils.FailOnError("Failed to declare a queue", err)
-
-	//qi.channel.NotifyReturn()
 }
 
 func (qi *queueInfo) AbortConnection() {

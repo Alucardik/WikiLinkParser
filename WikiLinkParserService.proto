@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package WikiLinkParser;
+option go_package = "https://github.com/Alucardik/soa-5/WikiLinkParser/proto";
+
+service WikiLinkParser {
+  rpc EstablishConnection(EmptyMsg) returns (ConnectionStatus) {};
+  rpc AbortConnection(EmptyMsg) returns (ConnectionStatus) {};
+  rpc PublishTask(ParseRequest) returns (ParseResponse) {};
+}
+
+message EmptyMsg {
+}
+
+message ConnectionStatus {
+  bool successful = 1;
+}
+
+message ParseRequest {
+  string initPage = 1;
+  string targetPage = 2;
+}
+
+message ParseResponse {
+  uint32 traceLen = 1;
+  string trace = 2;
+}

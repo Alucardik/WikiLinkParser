@@ -6,8 +6,10 @@ COPY config config
 COPY limiter limiter
 COPY queue_info queue_info
 COPY error_utils error_utils
+COPY client client
 COPY server server
 COPY worker worker
+COPY proto proto
 COPY go.mod .
 COPY go.sum .
 COPY main.go .

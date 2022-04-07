@@ -16,11 +16,13 @@ func declareQueue(ch *amqp.Channel, name string) (amqp.Queue, error) {
 type ParseRequest struct {
 	StartPage  string
 	TargetPage string
+	TaskId     uint64
 }
 
 type ParseResponse struct {
 	TraceLen int
 	Trace    string
+	TaskId   uint64
 }
 
 type ParseMsg interface {

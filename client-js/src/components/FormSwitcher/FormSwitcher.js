@@ -8,21 +8,20 @@ import RequestForm from "../RequestForm/RequestForm";
 
 import "./FormSwitcher.css";
 
-export default function FormSwitcher() {
+export default function FormSwitcher(props) {
   const formSwitcherCn = new cn("FormSwitcher");
   const [activeTab, setActiveTab] = React.useState(SERVER);
 
   const onTabClick = (e) => {
     setActiveTab(e.target.textContent);
-
   };
 
   return (
     <div className={formSwitcherCn.root()}>
       <div className={formSwitcherCn.elem("tabs")}>
-        {[SERVER, REQUEST].map((tab_title) => {
+        {[SERVER, REQUEST].map((tab_title, index) => {
           return (
-            <button
+            <button key={index}
               className={formSwitcherCn
                 .mix(formSwitcherCn.elem("tab", activeTab === tab_title ? "selected" : undefined))
                 .elem("tab")}
@@ -35,8 +34,8 @@ export default function FormSwitcher() {
       </div>
 
       {activeTab === SERVER ?
-        (<ServerConnectionForm/>) :
-        (<RequestForm/>)
+        (<ServerConnectionForm onSubmit={props.onConnectSubmit} />) :
+        (<RequestForm onSubmit={props.onPublishSubmit} />)
       }
     </div>
   );

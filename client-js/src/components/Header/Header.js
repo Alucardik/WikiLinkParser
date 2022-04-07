@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
       <header className={headerCn.root()}>
-        <a href="https://en.wikipedia.org/wiki/Main_Page" rel="noopener" target="_blank">
+        <a href="https://en.wikipedia.org/wiki/Main_Page" rel="noreferrer" target="_blank">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1200px-Wikipedia-logo-v2-en.svg.png"
             alt="Logo"

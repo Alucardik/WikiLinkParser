@@ -1,6 +1,7 @@
 package main
 
 import (
+	"WikiLinkParser/client"
 	"WikiLinkParser/server"
 	"WikiLinkParser/worker"
 	"flag"
@@ -10,6 +11,7 @@ import (
 const (
 	SERVER_MODE = "server"
 	WORKER_MODE = "worker"
+	CLIENT_MODE = "client"
 )
 
 var (
@@ -23,6 +25,8 @@ func main() {
 		server.Run()
 	case WORKER_MODE:
 		worker.Run()
+	case CLIENT_MODE:
+		client.Run()
 	default:
 		fmt.Println("Unsupported mode", *mode)
 	}

@@ -23,11 +23,13 @@ func Run() {
 				qInfo.PublishTask(queue_info.ParseResponse{
 					TraceLen: reqStat.GetTraceLen(),
 					Trace:    reqStat.GetTrace(),
+					TaskId:   t.TaskId,
 				})
 			} else {
 				qInfo.PublishTask(queue_info.ParseResponse{
 					TraceLen: 0,
 					Trace:    "Request has failed",
+					TaskId:   t.TaskId,
 				})
 			}
 		}
